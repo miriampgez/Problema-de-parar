@@ -2,6 +2,9 @@
 ### URL
 https://github.com/miriampgez/Problema-de-parar.git
 
+### JavaDoc
+file:///C:/Users/miria/OneDrive/Documentos/GitHub/Problema-de-parar/index.html
+
 # Paquete Controlador
 ## Clase CountDownController
 Esta clase representa un controlador para la cuenta regresiva. Implementa la interfaz Controlador y proporciona un método para ejecutar una cuenta regresiva desde un número dado hasta cero.
