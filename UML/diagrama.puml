@@ -1,0 +1,59 @@
+@startuml
+
+class CountDownController {
+    + execute (int input)
+}
+
+class InfiniteCountController {
+    + execute (int input)
+}
+
+class HaltChecker {
+    + check (Controlador, int)
+}
+
+class Reverser {
+    + reverse (Controlador, int)
+}
+
+class Vista {
+    + empezarCuentaAtras (Controlador countDownController)
+    + empezarCuentaInfinita (Controlador infiniteCountController)
+}
+
+class CuentaAtras {
+    - siguiente: Controlador
+    + execute (int input)
+}
+
+class CuentaInfinita {
+    - contador: int
+    + execute (int input)
+}
+
+class Main {
+    + main (String[] args)
+    - countdownController : Controlador
+    - infiniteCountController : Controlador
+    - halt : boolean
+}
+
+interface Controlador {
+    + execute (int input)
+}
+
+Controlador <|.. CountDownController
+Controlador <|.. InfiniteCountController
+Controlador <|.. CuentaAtras
+Controlador <|.. CuentaInfinita
+
+Vista ..> Controlador : uses
+Vista --> CuentaAtras : creates
+Vista --> CuentaInfinita : creates
+Main ..> Controlador : uses
+HaltChecker ..> Controlador : uses
+Reverser ..> Controlador : uses
+CountDownController --> Controlador : has a
+
+
+@enduml
