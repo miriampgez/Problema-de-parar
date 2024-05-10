@@ -1,10 +1,12 @@
 package Modelo;
 
-public class CuentaAtras implements Controlador {
-    private Controlador controlador;
+import javax.swing.*;
 
-    public CuentaAtras(Controlador controlador) {
-        this.controlador = controlador;
+public class CuentaAtras implements Controlador {
+    private Controlador siguiente;
+
+    public CuentaAtras(Controlador siguiente) {
+        this.siguiente = siguiente;
     }
 
     public void execute(int input) {
@@ -15,8 +17,8 @@ public class CuentaAtras implements Controlador {
                 e.printStackTrace();
             }
         }
-        if (controlador != null) {
-            controlador.execute(input);
+        if (siguiente != null) {
+            siguiente.execute(input);
         }
     }
 }

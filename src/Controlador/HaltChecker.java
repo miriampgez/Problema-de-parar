@@ -9,13 +9,8 @@ public class HaltChecker {
                 controlador.execute(input);
             });
             thread.start();
-            Thread.sleep(2000);
-            if (thread.isAlive()) {
-                thread.interrupt();
-                return false;
-            } else {
-                return true;
-            }
+            thread.join(5000);
+            return !thread.isAlive();
         } catch (InterruptedException e) {
             e.printStackTrace();
             return false;
