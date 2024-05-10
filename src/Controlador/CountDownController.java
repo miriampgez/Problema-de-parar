@@ -10,7 +10,6 @@ public class CountDownController implements Controlador {
     }
 
     public void execute(int input) {
-        System.out.println("CountdownController inicia la cuenta atrás con el valor inicial: " + input);
         if (next != null) {
             next.execute(input);
         }
